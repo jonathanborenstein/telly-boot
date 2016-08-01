@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="app.default" template="/WEB-INF/layouts/default.jsp">
+		<put-attribute name="title" value="Telly" />
+	</definition>
+
+	<definition name="app.homepage" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/home.jsp" />
+	</definition>
+
+	<definition name="app.myreservations" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/myreservations.jsp" />
+	</definition>
+	
+	<definition name="app.results" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/results.jsp" />
+	</definition>
+	
+	<definition name="app.login" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/login.jsp" />
+	</definition>
+	
+	<definition name="app.register" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/register.jsp" />
+	</definition>
+	
+	<definition name="app.createtrip" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/tiles/createtrip.jsp" />
+	</definition>
+	
+
+</tiles-definitions>
