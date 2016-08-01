@@ -5,4 +5,4 @@ Telly is a reservation system built with Spring Boot using many features of the 
 
 In the application.properties file located in the resources folder, you must enter your own database details (username, password, url, etc).
 
-If you are not using the MySql you must add the connecter jar for whatever database you are using.
+If you are not using a MySQL database, you must add the connecter jar for whatever database you are using.
