@@ -59,7 +59,6 @@
 		<p>
 			<c:out value="${results.goingTo}"></c:out>
 			<c:out value="${results.dateReturn}"></c:out>
-			<c:out value="${results.id}"></c:out>
 		<p>
 
 			<c:if test="${results != null}">

@@ -7,13 +7,25 @@
 
 
 <br>
-<c:forEach var="trips" items="${trips}">
+<c:forEach var="myMap" items="${myMap}">
+
 	<p>
-		<c:out value="${trips.leaveFrom}"></c:out>
-		<c:out value="${trips.dateLeave}"></c:out>
+		<c:out value="${myMap.value.leaveFrom}"></c:out>
+		<c:out value="${myMap.value.dateLeave}"></c:out>
 	<p>
-		<c:out value="${trips.goingTo}"></c:out>
-		<c:out value="${trips.dateReturn}"></c:out>
-	<p>
-	<br>
+		<c:out value="${myMap.value.goingTo}"></c:out>
+		<c:out value="${myMap.value.dateReturn}"></c:out>
+
+
+
+		<sf:form method="post" commandName="reservations">
+			<input id="id" name="id" type="hidden" value="${myMap.key}" />
+
+			<input class="control" value="Cancel Reservation" type="submit" />
+
+
+
+
+		</sf:form>
+		<br>
 </c:forEach>

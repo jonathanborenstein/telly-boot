@@ -1,7 +1,6 @@
 package com.telly.controllers;
 
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,7 @@ public class BusController {
 
 	@Autowired
 	BusService busService;
+	
 
 	@RequestMapping(value="/createtrip", method=RequestMethod.GET)
 	ModelAndView addStatus(ModelAndView modelAndView, @ModelAttribute ("bus")Bus bus){
@@ -82,24 +82,5 @@ public class BusController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/myreservations", method=RequestMethod.GET)
-	ModelAndView myReservations(ModelAndView modelAndView, Reservations reserve, Bus bus, BindingResult result, Principal principal){
 
-		modelAndView.setViewName("app.myreservations");
-
-		List<Reservations> reservations = reservationsService.findByEmail(principal.getName());
-		List<Bus> trips = new ArrayList<Bus>();
-		Bus trip = new Bus();
-		for(int i = 0; i < reservations.size(); i++){
-			trip = busService.findById(reservations.get(i).getBusId());
-			trips.add(trip);
-		}
-
-		modelAndView.getModel().put("reservations", reservations);
-		modelAndView.getModel().put("trips", trips);
-
-
-
-		return modelAndView;
-	}
 }

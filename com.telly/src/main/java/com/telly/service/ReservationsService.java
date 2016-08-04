@@ -24,4 +24,9 @@ public class ReservationsService {
 		
 	}
 
+	public void delete(Long id) {
+		reservationsDao.delete(id);
+		
+	}
+
 }
