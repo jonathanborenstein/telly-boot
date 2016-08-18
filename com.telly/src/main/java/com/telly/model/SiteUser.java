@@ -38,6 +38,10 @@ public class SiteUser {
 	
 	@Column(name="role", length=20)
 	private String role;
+	
+	public SiteUser(){
+		
+	}
 
 	public Long getId() {
 		return id;

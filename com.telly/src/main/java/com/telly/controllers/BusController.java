@@ -64,8 +64,6 @@ public class BusController {
 		List<Bus> results = busService.findByDateLeave(bus.getDate(), bus.getLeaveFrom(), bus.getGoingTo());
 
 
-
-
 		modelAndView.getModel().put("results", results);
 
 
@@ -80,7 +78,7 @@ public class BusController {
 		if(!result.hasErrors()){
 			reserve.setEmail(principal.getName());
 			reserve.setBusId(bus.getId());
-			reservationsService.save(reserve);
+			reservationsService.create(reserve);
 			modelAndView.setViewName("redirect:/");
 		}
 
