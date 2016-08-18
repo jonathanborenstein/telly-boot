@@ -32,6 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.permitAll()
 		.antMatchers("/myreservations", "/book", "/createtrip")
 			.hasAnyRole("USER", "ADMIN")
+			.anyRequest()
+			.denyAll()
 		.and()
 			.formLogin()
 			.loginPage("/login")

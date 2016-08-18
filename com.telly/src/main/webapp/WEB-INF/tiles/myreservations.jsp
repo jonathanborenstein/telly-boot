@@ -10,11 +10,10 @@
 <c:forEach var="myMap" items="${myMap}">
 
 	<p>
-		<c:out value="${myMap.value.leaveFrom}"></c:out>
-		<c:out value="${myMap.value.dateLeave}"></c:out>
+		Leaving From: <c:out value="${myMap.value.leaveFrom}"></c:out>
+		on <c:out value="${myMap.value.date}"></c:out>
 	<p>
-		<c:out value="${myMap.value.goingTo}"></c:out>
-		<c:out value="${myMap.value.dateReturn}"></c:out>
+		Going To: <c:out value="${myMap.value.goingTo}"></c:out>
 
 
 

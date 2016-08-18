@@ -33,6 +33,8 @@ public class ReservationsController {
 		List<Reservations> reservations = reservationsService.findByEmail(principal.getName());
 		HashMap<Long, Bus> myMap = new HashMap<Long, Bus>();
 
+		
+		
 		Bus trip = new Bus();
 		for(int i = 0; i < reservations.size(); i++){
 			trip = busService.findById(reservations.get(i).getBusId());

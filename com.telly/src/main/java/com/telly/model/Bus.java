@@ -24,16 +24,12 @@ public class Bus {
 	private Long id;
 	
 	
-	@Column(name="dateleave")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="date")
+	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date dateLeave;
+	private Date date;
 	
 	
-	@Column(name="datereturn")
-	@Temporal(TemporalType.TIMESTAMP)
-	@DateTimeFormat(pattern="yyyy/MM/dd")
-	private Date dateReturn;
 	
 	@Column(name="leavingfrom")
 	private String leaveFrom;
@@ -47,9 +43,8 @@ public class Bus {
 	}
 
 
-	public Bus(Date dateLeave, Date dateReturn, String leaveFrom, String goingTo) {
-		this.dateLeave = dateLeave;
-		this.dateReturn = dateReturn;
+	public Bus(Date date, String leaveFrom, String goingTo) {
+		this.date = date;
 		this.leaveFrom = leaveFrom;
 		this.goingTo = goingTo;
 	
@@ -63,26 +58,6 @@ public class Bus {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-
-	public Date getDateLeave() {
-		return dateLeave;
-	}
-
-
-	public void setDateLeave(Date dateLeave) {
-		this.dateLeave = dateLeave;
-	}
-
-
-	public Date getDateReturn() {
-		return dateReturn;
-	}
-
-
-	public void setDateReturn(Date dateReturn) {
-		this.dateReturn = dateReturn;
 	}
 
 
@@ -103,6 +78,16 @@ public class Bus {
 
 	public void setGoingTo(String goingTo) {
 		this.goingTo = goingTo;
+	}
+
+
+	public Date getDate() {
+		return date;
+	}
+
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 	

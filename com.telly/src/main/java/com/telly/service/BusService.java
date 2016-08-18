@@ -18,13 +18,13 @@ public class BusService {
 	public void save(Bus bus){
 		busDao.save(bus);
 	}
-	
-	public List<Bus> findByDate(Date dateLeave, Date dateReturn, String goingTo, String leaveFrom){
-		List<Bus> results = busDao.findBydateLeaveAndDateReturnAndGoingToAndLeaveFrom(dateLeave, dateReturn, goingTo, leaveFrom);
+
+	public List<Bus> findByDateLeave(Date date, String leaveFrom, String goingTo){
+		List<Bus> results = busDao.findByDateAndLeaveFromAndGoingTo(date, leaveFrom, goingTo);
 		
 		return results;
 	}
-
+	
 	public Bus findById(Long id) {
 		Bus bus = busDao.findOne(id);
 		return bus;

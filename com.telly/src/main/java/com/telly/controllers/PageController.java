@@ -22,5 +22,11 @@ public class PageController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/403")
+	ModelAndView accessDenied(ModelAndView modelAndView) {
+
+		modelAndView.setViewName("redirect:/");
+		return modelAndView;
 	
+}
 }

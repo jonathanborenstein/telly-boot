@@ -60,10 +60,15 @@ public class BusController {
 
 		modelAndView.setViewName("app.results");
 
-		List<Bus> results = busService.findByDate(bus.getDateLeave(), bus.getDateReturn(), bus.getGoingTo(), bus.getLeaveFrom());
+		
+		List<Bus> results = busService.findByDateLeave(bus.getDate(), bus.getLeaveFrom(), bus.getGoingTo());
+
+
 
 
 		modelAndView.getModel().put("results", results);
+
+
 
 		return modelAndView;
 	}

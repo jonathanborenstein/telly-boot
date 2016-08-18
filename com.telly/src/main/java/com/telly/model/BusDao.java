@@ -10,9 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BusDao extends PagingAndSortingRepository<Bus, Long>{
 	
-	//Bus findFirstByOrderByIdDesc();
-	
-	List<Bus> findBydateLeaveAndDateReturnAndGoingToAndLeaveFrom(Date dateLeave, Date dateReturn, String goingTo, String leaveFrom);
+	List<Bus> findByDateAndLeaveFromAndGoingTo(Date date, String leaveFrom, String goingTo);
+
 	List<Bus> findById(Long id);
 
 	

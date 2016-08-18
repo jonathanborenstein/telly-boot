@@ -10,18 +10,10 @@
 	<table class="form-horizontal" role="form">
 		<tr>
 			<td class="control-label col-sm-2">Leave Date:</td>
-			<td><sf:input class="col-sm-10" path="dateLeave"
-					name="dateLeave" type="text" /><br />
+			<td><sf:input class="col-sm-10" path="date"
+					name="date" type="text" /><br />
 				<div class="error">
-					<sf:errors path="dateLeave"></sf:errors>
-				</div></td>
-		<tr>
-		<tr>
-			<td class="control-label col-sm-2">Return Date:</td>
-			<td><sf:input class="col-sm-10" path="dateReturn"
-					name="dateReturn" type="text" /><br />
-				<div class="error">
-					<sf:errors path="dateReturn"></sf:errors>
+					<sf:errors path="date"></sf:errors>
 				</div></td>
 		<tr>
 		<tr>
