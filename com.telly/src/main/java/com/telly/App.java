@@ -51,8 +51,7 @@ public class App extends SpringBootServletInitializer {
 
 			@Override
 			public void customize(ConfigurableEmbeddedServletContainer container) {
-				container.addErrorPages(new ErrorPage(HttpStatus.FORBIDDEN, "/403"));
-			}
+				container.addErrorPages(new ErrorPage(HttpStatus.FORBIDDEN, "/403"));			}
 			
 		};
 	}

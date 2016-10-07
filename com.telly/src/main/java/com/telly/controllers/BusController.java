@@ -3,6 +3,8 @@ package com.telly.controllers;
 import java.security.Principal;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -27,21 +29,21 @@ public class BusController {
 	
 
 	@RequestMapping(value="/createtrip", method=RequestMethod.GET)
-	ModelAndView addStatus(ModelAndView modelAndView, @ModelAttribute ("bus")Bus bus){
+	ModelAndView addStatus(ModelAndView modelAndView){
 
 		modelAndView.setViewName("app.createtrip");
 
 
-		Bus bus1 = new Bus();
+		Bus bus = new Bus();
 
 
-		modelAndView.getModel().put("bus", bus1);
+		modelAndView.getModel().put("bus", bus);
 
 		return modelAndView;
 	}
 
 	@RequestMapping(value="/createtrip", method=RequestMethod.POST)
-	ModelAndView addStatus(ModelAndView modelAndView, Bus bus, BindingResult result){
+	ModelAndView addStatus(ModelAndView modelAndView, @Valid Bus bus, BindingResult result){
 
 		modelAndView.setViewName("app.createtrip");
 
@@ -54,17 +56,31 @@ public class BusController {
 
 		return modelAndView;
 	}
-
+	
 	@RequestMapping(value="/results", method=RequestMethod.GET)
-	ModelAndView results(ModelAndView modelAndView, @ModelAttribute ("bus")Bus bus){
+	ModelAndView addSearch(ModelAndView modelAndView){
+
+		modelAndView.setViewName("app.results");
+
+		Bus bus = new Bus();
+
+		modelAndView.getModel().put("bus", bus);
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value="/results", method=RequestMethod.POST)
+	ModelAndView results(ModelAndView modelAndView, @Valid @ModelAttribute ("bus")Bus bus, BindingResult result){
 
 		modelAndView.setViewName("app.results");
 
 		
-		List<Bus> results = busService.findByDateLeave(bus.getDate(), bus.getLeaveFrom(), bus.getGoingTo());
+		if(!result.hasErrors()){
+			List<Bus> results = busService.findByDateLeave(bus.getDate(), bus.getLeaveFrom(), bus.getGoingTo());
+			modelAndView.getModel().put("results", results);
 
+		}
 
-		modelAndView.getModel().put("results", results);
 
 
 
@@ -79,7 +95,7 @@ public class BusController {
 			reserve.setEmail(principal.getName());
 			reserve.setBusId(bus.getId());
 			reservationsService.create(reserve);
-			modelAndView.setViewName("redirect:/");
+			modelAndView.setViewName("redirect:/myreservations");
 		}
 
 		return modelAndView;

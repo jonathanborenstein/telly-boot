@@ -46,6 +46,12 @@
 	color: red;
 }
 
+.error {
+	color: red;
+	font-weight: bold;
+	
+}
+
 .homepage-status {
 	text-align: center;
 	margin-top: 30px;
@@ -66,10 +72,6 @@
 	margin-bottom: 10px;
 }
 
-.login-form>div>button {
-	background-color: grey;
-	color: white;
-}
 
 .login-error {
 	margin-top: 10px;

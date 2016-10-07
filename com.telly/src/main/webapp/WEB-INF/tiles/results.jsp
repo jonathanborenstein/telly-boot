@@ -7,16 +7,21 @@
 <h2>Search</h2>
 
 
-<sf:form method="get" modelAttribute="bus">
 
+<sf:form method="post" modelAttribute="bus">
+
+
+	<div class="error">
+		<sf:errors path="date"></sf:errors>
+	</div>
+	
 	<table class="form-horizontal" role="form">
 		<tr>
+
+
 			<td class="control-label col-sm-2">Leave Date:</td>
 			<td><sf:input class="col-sm-10" path="date" name="date"
-					type="text" /><br />
-				<div class="error">
-					<sf:errors path="date"></sf:errors>
-				</div></td>
+					type="text" /><br/>
 		<tr>
 		<tr>
 			<td class="control-label col-sm-2">Leave From:</td>
@@ -64,10 +69,11 @@
 
 					<input id="id" name="id" type="hidden" value="${results.id}" />
 
-					<input class="control" value="Book" type="submit" />
+					<input class="btn-primary" value="Book" type="submit" />
 
 
 				</sf:form>
+				<br>
 			</c:if>
 	</c:forEach>
 

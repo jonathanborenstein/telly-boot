@@ -20,7 +20,7 @@
 		<sf:form method="post" commandName="reservations">
 			<input id="id" name="id" type="hidden" value="${myMap.key}" />
 
-			<input class="control" value="Cancel Reservation" type="submit" />
+			<input class="btn-primary" value="Cancel Reservation" type="submit" />
 
 
 
