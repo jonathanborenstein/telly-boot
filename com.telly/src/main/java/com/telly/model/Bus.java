@@ -27,7 +27,7 @@ public class Bus {
 	@NotNull
 	@Column(name="date")
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 	
 	

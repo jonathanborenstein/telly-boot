@@ -18,7 +18,7 @@
 		<tr>
 			<td class="control-label col-sm-2">Leave Date:</td>
 			<td><sf:input class="col-sm-10" path="date" name="date"
-					type="text" /><br/></td>
+					type="date" /><br/></td>
 		<tr>
 		<tr>
 			<td class="control-label col-sm-2">Leave From:</td>

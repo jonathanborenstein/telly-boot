@@ -88,13 +88,12 @@ public class BusController {
 	}
 
 	@RequestMapping(value="/book", method=RequestMethod.POST)
-	ModelAndView results(ModelAndView modelAndView, Reservations reserve, Bus bus, BindingResult result, Principal principal){
+	ModelAndView results(ModelAndView modelAndView, Bus bus, BindingResult result, Principal principal){
 
 
 		if(!result.hasErrors()){
-			reserve.setEmail(principal.getName());
-			reserve.setBusId(bus.getId());
-			reservationsService.create(reserve);
+			Reservations reservation = new Reservations(bus.getId(), principal.getName());
+			reservationsService.save(reservation);
 			modelAndView.setViewName("redirect:/myreservations");
 		}
 

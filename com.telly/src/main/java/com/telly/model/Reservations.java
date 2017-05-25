@@ -11,6 +11,14 @@ import javax.persistence.Table;
 @Table(name="telly_reservations")
 public class Reservations {
 	
+	public Reservations() {}
+	
+
+	public Reservations(Long busId, String email) {
+		this.busId = busId;
+		this.email = email;
+	}
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
